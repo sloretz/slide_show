@@ -106,7 +106,7 @@ class SlideShowNode(Node):
         path = os.path.join(self._dirpath, self._current_file)
         cv_image = None
         if os.path.isfile(path):
-            cv_image = cv2.imread(path, cv2.IMREAD_UNCHANGED)
+            cv_image = cv2.imread(path, cv2.IMREAD_COLOR)
         if cv_image is None:
             self.get_logger().warn('Failed to read: ' + path)
             # ignore this one and try the next image
@@ -114,7 +114,7 @@ class SlideShowNode(Node):
             return self._next_image()
 
         self.get_logger().info('Next image: ' + self._current_file)
-        return self._bridge.cv2_to_imgmsg(cv_image, encoding="passthrough")
+        return self._bridge.cv2_to_imgmsg(cv_image, encoding="bgr8")
 
     def publish_next(self):
         self._refresh()
