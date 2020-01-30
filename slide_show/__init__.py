@@ -54,7 +54,7 @@ class SlideShowNode(Node):
             reliability=QoSReliabilityPolicy.RELIABLE,
             depth=1)
 
-        self._image_pub = self.create_publisher(Image, '~/images', image_qos)
+        self._image_pub = self.create_publisher(Image, 'images', image_qos)
 
         period_desc = ParameterDescriptor()
         # TODO(sloretz) allow changing period
