@@ -4,7 +4,7 @@ This node publishes images from a directory at a fixed rate.
 
 # Topics -
 
-* `~/images` (type: `sensor_msgs/msg/Image`) - The topic on which images are published.
+* `images` (type: `sensor_msgs/msg/Image`) - The topic on which images are published.
 
 ## Parameters
 
