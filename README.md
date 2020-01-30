@@ -31,5 +31,8 @@ To run with custom parameters, edit and save the following as `slide_show_params
 Then run the node with the path to the yaml file.
 
 ```
-ros2 run slide_show slide_show --ros-args __params:=path/to/slide_show_params.yaml
+# Dashing
+ros2 run slide_show slide_show __params:=path/to/slide_show_params.yaml
+# Eloquent
+ros2 run slide_show slide_show --ros-args --params-file path/to/slide_show_params.yaml
 ```
